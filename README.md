@@ -1,4 +1,4 @@
-# 🤖 Dork Me
+# 🤖 Dork Me ![python3.10+](https://img.shields.io/badge/python-3.10+-blue)
 
 `Dork Me` is a simple script that can save you time
 going through google dorks by opening them qucikly
