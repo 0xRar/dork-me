@@ -4,7 +4,7 @@
 going through google dorks by opening them qucikly
 in your browser.
 
-<img width="800px" src="https://github.com/0xRar/dork-me/assets/33517160/1abba3ae-40d1-4477-8a33-2a42a63f1663">
+<img width="800px" src="https://github.com/0xRar/dork-me/assets/33517160/3e034d0a-1d6d-4d72-a052-ec9f34c093dc">
 
 ## Installation
 - Clone the repository:
