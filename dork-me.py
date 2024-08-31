@@ -1,3 +1,4 @@
+import textwrap
 import webbrowser
 
 from colorama import Fore, Style, init
@@ -6,7 +7,7 @@ from colorama import Fore, Style, init
 ==========================================
 Dork Me 
 Created on: Aug 29, 2023
-Author: Isa Ebrahim(0xRar) -- 0xrar.net
+Author: Isa Ebrahim -- 0xrar.net
 ==========================================
 """
 
@@ -22,11 +23,11 @@ def banner():
     {}  __   __   __            __   ___ 
     {} |  \ /  \ |__) |__/     |\/| |__  
     {} |__/ \__/ |  \ |  \     |  | |___ 
-    {} By Isa Ebrahim(0xRar) -- 0xrar.net
+    {} By Isa Ebrahim -- 0xrar.net
     """.format(
         b, g, r, y
     )
-    print(bnr)
+    print(textwrap.dedent(bnr))
 
 
 def help():
@@ -49,7 +50,8 @@ def help():
     [4]> Exposed log files
     [5]> Backup and old files
     [6]> Install / Setup files
-    [7]> Open Redirects
+    [7]> Other Files (pdf,xlsx,etc)
+    [8]> Open Redirects
     """
 
 
@@ -59,16 +61,17 @@ help()
 def main():
     target = input("Pick a Target: ")
 
-    print(options_output)
+    print(textwrap.dedent(options_output))
     print("to see the list of options & commands use the command: help")
 
     dorks = {
         "dlisting": f"site:{target}+intitle:index.of",
-        "conf_files": f"site:{target}+ext:xml+|+ext:conf+|+ext:cnf+|+ext:reg+|+ext:inf+|+ext:rdp+|+ext:cfg+|+ext:txt+|+ext:ora+|+ext:ini",
-        "db_files": f"site:{target}+ext:sql+|+ext:dbf+|+ext:mdb",
-        "log_files": f"site:{target}+ext:log+|ext:txt",
-        "backup_files": f"site:{target}+ext:bkf+|+ext:bkp+|+ext:bak+|+ext:old+|+ext:backup",
+        "conf_files": f"site:{target}+filetype:xml+|+filetype:conf+|+filetype:cnf+|+filetype:reg+|+filetype:inf+|+filetype:rdp+|+filetype:cfg+|+filetype:txt+|+filetype:ora+|+filetype:ini",
+        "db_files": f"site:{target}+filetype:sql+|+filetype:dbf+|+filetype:mdb",
+        "log_files": f"site:{target}+filetype:log+|filetype:txt",
+        "backup_files": f"site:{target}+filetype:bkf+|+filetype:bkp+|+filetype:bak+|+filetype:old+|+filetype:backup",
         "setup_files": f"site:{target}+inurl:readme+|+inurl:license+|+inurl:install+|+inurl:setup+|+inurl:config",
+        "other_files": f"site:{target}+filetype:pdf+|+filetype:xlsx+|+filetype:docx",
         "oredir": f"site:{target}+inurl:redir+|+inurl:url+|+inurl:redirect+|+inurl:return+|+inurl:src=http+|+inurl:r=http"
     }
 
@@ -79,8 +82,8 @@ def main():
 
         match op_input:
             case "help":
-                print(help_output)
-                print(options_output)
+                print(textwrap.dedent(help_output))
+                print(textwrap.dedent(options_output))
 
             case "q":
                 print("Quitting...")
@@ -105,6 +108,9 @@ def main():
                 webbrowser.open_new_tab(url + dorks["setup_files"])
                 print(f'Dork used: {dorks["setup_files"]}')
             case "7":
+                webbrowser.open_new_tab(url + dorks["other_files"])
+                print(f'Dork used: {dorks["other_files"]}')
+            case "8":
                 webbrowser.open_new_tab(url + dorks["oredir"])
                 print(f'Dork used: {dorks["oredir"]}')
             case _:

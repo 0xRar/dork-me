@@ -34,7 +34,8 @@ in your browser.
     [4]> Exposed log files
     [5]> Backup and old files
     [6]> Install / Setup files
-    [7]> Open Redirects
+    [7]> Other Files (pdf,xlsx,etc)
+    [8]> Open Redirects
     ```
 
 - Run, Pick a target, Pick an option(dork), Good Luck Happy Hacking!
